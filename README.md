@@ -8,18 +8,21 @@ Learnify is a cutting-edge, AI-powered learning platform that revolutionizes edu
 ## 🌟 Features
 
 ### 🤖 AI-Powered Learning
+
 - **Interactive Quizzes**: Dynamic quiz generation with AI-powered analysis
 - **PDF Chat**: Engage with your documents through intelligent conversations
 - **Language Tutor**: Advanced AI language learning assistant
 - **Smart Analytics**: Detailed performance insights and learning recommendations
 
 ### 📚 Learning Resources
+
 - **Course Management**: Create and manage structured learning content
 - **Learning Roadmaps**: Customized learning paths for various technologies
 - **Resource Library**: Comprehensive collection of educational materials
 - **Community Learning**: Collaborative learning environment
 
 ### ⚡ Smart Tools
+
 - **Interactive Whiteboard**: Digital workspace with AI analysis
 - **Notebook System**: Organized note-taking with smart features
 - **Progress Tracking**: Advanced analytics and performance monitoring
@@ -28,35 +31,65 @@ Learnify is a cutting-edge, AI-powered learning platform that revolutionizes edu
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm (v9 or higher)
+- Docker Desktop (for local development)
+- Supabase CLI (`npm install -g supabase`)
 - Supabase account
 - GROQ API key
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/learnify.git
 cd learnify
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file in the root directory:
+
 ```env
 VITE_GROQ_API_KEY=your_groq_api_key
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-4. Start the development server:
+4. Start the local Supabase instance:
+
+```bash
+supabase start
+```
+
+5. Apply database migrations:
+
+```bash
+supabase db push
+```
+
+6. Start the development server:
+
 ```bash
 npm run dev
 ```
+
+### Database Setup
+
+For detailed instructions on setting up and working with the database, please refer to our [Contributing Guide](CONTRIBUTING.md#database-setup).
+
+Key points:
+
+- Local development uses Docker and Supabase CLI
+- Migrations are stored in `/supabase/migrations`
+- Follow migration guidelines when making database changes
+- Test all changes locally before committing
 
 ## 🏗️ Architecture
 
@@ -83,8 +116,10 @@ learnify/
 │   ├── store/         # State management
 │   ├── types/         # TypeScript type definitions
 │   ├── utils/         # Utility functions
-│   └── lib/          # Shared libraries and configurations
+│   └── lib/           # Shared libraries and configurations
 ├── public/           # Static assets
+├── supabase/        # Supabase configuration and migrations
+│   └── migrations/  # Database migration files
 └── tests/           # Test files
 ```
 
@@ -96,6 +131,7 @@ The project uses various configuration files:
 - `tailwind.config.js`: Tailwind CSS configuration
 - `tsconfig.json`: TypeScript configuration
 - `eslint.config.js`: ESLint configuration
+- `supabase/config.toml`: Supabase configuration
 
 ## 🤝 Contributing
 
