@@ -28,6 +28,13 @@ Learnify is a cutting-edge, AI-powered learning platform that revolutionizes edu
 - **Progress Tracking**: Advanced analytics and performance monitoring
 - **Resource Management**: Efficient organization of learning materials
 
+### 🌐 Multilingual Website Translation
+
+- **Full-Page Translation**: Users can translate the entire website into their preferred Indian language using the language dropdown in the navbar.
+- **Supported Languages**: Includes Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Odia, Assamese, Urdu, and more.
+- **Dynamic Translation**: All user-facing content is translated in real time using the integrated Flask translation API (Bhashini).
+- **Seamless UX**: Language selection is persistent and applies instantly across all pages.
+
 ## 🚀 Getting Started
 
  ## AI Fallback System
@@ -66,7 +73,7 @@ Learnify is a cutting-edge, AI-powered learning platform that revolutionizes edu
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/learnify.git
+git clone https://github.com/tarinagarwal/learnify.git
 cd learnify
 ```
 
@@ -76,30 +83,37 @@ cd learnify
 npm install
 ```
 
-3. Create a `.env` file in the root directory:
+3. Install Supabase CLI
+
+```bash
+npm i supabase --save-dev
+```
+
+4. Start Supabase Locally
+
+```bash
+npx supabase start
+```
+
+5. Create a `.env` file in the root directory:
 
 ```env
 VITE_GROQ_API_KEY=your_groq_api_key
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-4. Start the local Supabase instance:
-
-```bash
-supabase start
-```
-
-5. Apply database migrations:
-
-```bash
-supabase db push
+TRANSLATION_BHASHINI_API_KEY=your_bhshini_api_key
 ```
 
 6. Start the development server:
 
 ```bash
 npm run dev
+```
+
+7. Start the translation server:
+
+```bash
+python ./translation_api.py
 ```
 
 ### Database Setup
@@ -126,6 +140,7 @@ Learnify is built with modern technologies and follows best practices:
 - **Routing**: React Router
 - **Form Handling**: React Hook Form
 - **Type Safety**: TypeScript
+- **Multilingual Support**: Bhashini
 
 ## 📦 Project Structure
 
@@ -154,6 +169,7 @@ The project uses various configuration files:
 - `tsconfig.json`: TypeScript configuration
 - `eslint.config.js`: ESLint configuration
 - `supabase/config.toml`: Supabase configuration
+
 
 ## 🤝 Contributing
 
